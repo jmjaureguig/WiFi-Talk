@@ -81,7 +81,9 @@ devices with lower power output. The issue is you loose accuracy, instead of
 0.5-m indoors you will get several meters on proportionally larger area.
 
 
-## Arduino firmware
+## Arduino firmware 
+
+[Sketch](arduino-stepper-sketch/arduino-stepper-sketch.ino)
 
 Here things start to get inefficient (even more). The arduino expect commands
 on serial port, three, no four, no five. Three 😁
