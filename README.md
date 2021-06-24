@@ -42,7 +42,7 @@ This play have four acts:
 
 This is a bad option, the diameter is off by several millimeters. In the other
 and, it is easy to get one, easy to drill and install the monopole. Make a 6mm
-hole from the back of the can to install the dipole later.
+hole 3-cm from the back of the can to insert the monopole later.
 
 
 ### 1/4 wave monopole
