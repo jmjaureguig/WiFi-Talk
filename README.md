@@ -59,7 +59,10 @@ The total length is ~31-mm including any extra length from the connector
 itself. The first time I made one of these antennas I used calipers and
 sand paper to be sure the length was right down to 0.1-mm now that I have
 the equipment to see how close it needs to be, you can save time,
-+/-1-mm is close enough.
++/-1-mm is close enough, in fact I tried 29-mm to 34-mm there are differences
+on performance and they will work too.
+
+![Quarter wave antennas](images/quarter-wave.jpg)
 
 
 ### Unnecessary 3D printed parts
