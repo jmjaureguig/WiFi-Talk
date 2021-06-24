@@ -1,8 +1,16 @@
 // Coil pins
+
 #define coilA 9
 #define coilB 10
 #define coilC 11
 #define coilD 12
+
+// NOTES:
+// 8-states per motor cycle
+// 512 cycles for a full turn
+// 4096 total states/rev, this defines
+// maxSteps
+
 
 byte rxByte;
 String inStr = "";
@@ -11,6 +19,7 @@ const byte numChars = 12;
 char rcvChars[numChars];
 
 unsigned int stepsCounter = 0;
+unsigned int maxSteps = 4095;
 
 // Coil states
 int enCoil[8][4] = {
@@ -90,8 +99,8 @@ void goStep() {
   u=       (rcvChars[4]-48);
   requested = k+c+d+u;
 
-  if (requested > 4095){
-    requested = 4095;
+  if (requested > maxSteps){
+    requested = maxSteps;
   }
 
   while (requested != stepsCounter){
@@ -129,9 +138,6 @@ void printNew() {
 }
 
 void loop() {
-  // 8-states per motor cycle
-  // 512 cycles for a full turn
-  // 4096 total states/rev
 
   while(true){
     rxWithEnd();

@@ -23,16 +23,17 @@ suggested of ways to find WiFi devices and here I am a couple of months later.
 The first part is how to keep your hardware safe, electronics after reaching
 their limits, there is no `UNDO` button. And as described in the disclaimer,
 this is a slow (but working) prototype with the sole objective of learning,
-to serve as a minimal base to start. Check the video,
-I'm sure you will find many ideas on how to continue.
+to serve as a minimal base to start. Check the video, I'm sure you will
+find many ideas on how to continue.
 
 
 # The parts
 
-This play have three acts:
+This play have four acts:
 1. RF hardware connections and not frying electronics.
 2. Simple arduino firmware that moves the antenna.
 3. Slow and inefficient scripts capturing and plotting data.
+4. Creating plots.
 
 
 ## RF hardware
@@ -73,3 +74,28 @@ the same check the [OpenSCAD](wifi-DF-mount.scad) just change
 You need this? No. Duct-tape and hot-glue are much faster and simple. My inner
 child wants to persuade my adult me that it wasn't an impulse buy.
 
+**NOTE:** Please check the video with zerialkiller there are more details there
+that I can add here. Hardware can make or break the project, modifying 90-cm
+parabolic antennas to use bi-quad feeds will increase coverage area and detect
+devices with lower power output. The issue is you loose accuracy, instead of
+0.5-m indoors you will get several meters on proportionally larger area.
+
+
+## Arduino firmware
+
+Here things start to get inefficient (even more). The arduino expect commands
+on serial port, three, no four, no five. Three 😁
+1. **R** to reset the counter this defines the current heading of the antenna to
+zero.
+2. **cNNNN** get the current position of the antenna it is the step counter.
+NNNN is a four digits number.
+3. **gNNNN** go-to `NNNN` position, it needs to be a 4-digit number, leading
+empty spaces for 999 and lower must be zeros.
+
+Why this is slow? After a go-to the arduino doesn't reply to any messages. If
+you thought on requesting a full circle, capture data and get the position
+during the rotation to increase readout speed, you are in the right path. Fix
+this issue and you can reduce time.
+
+
+## Slow and inefficient scripts.
