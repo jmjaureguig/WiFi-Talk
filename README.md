@@ -52,6 +52,8 @@ reverse-polarity, RF-SMA was designed to comply with FCC regulations and
 avoid what we are going to do, connect Wi-Fi equipment to radio equipment not
 designed for that. Check the connector and buy the adapter you need.
 
+![SMA and RP-SMA](images/wifi-DF-prototype.jpg)
+
 The total length is ~31-mm including any extra length from the connector
 itself. The first time I made one of these antennas I used calipers and
 sand paper to be sure the length was right down to 0.1-mm now that I have
@@ -63,5 +65,11 @@ the equipment to see how close it needs to be, you can save time,
 
 I make a clamp to hold the cantenna, hold the USB dongle on top and plug into
 the stepper motor axis directly. I'm using a *28BYJ-48* motor, in case you use
-the same check the [OpenSCAD](wifi-DF-mount.scad) just change `axis_d` and `axis_t` to make the
-square hole match the axis of your motor.
+the same check the [OpenSCAD](wifi-DF-mount.scad) just change
+`axis_d` and `axis_t` to make the square hole match the axis of your motor.
+
+![3D printed clamp](images/openscad-clamp.jpg)
+
+You need this? No. Duct-tape and hot-glue are much faster and simple. My inner
+child wants to persuade my adult me that it wasn't an impulse buy.
+
